@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Chakra Petch', sans-serif;
+    --font-sans: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #06070E;
+    color: #F8FAFC;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans-ui {
+  font-family: var(--font-sans);
+}
+
+.font-mono-telemetry {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Neon Arcade Glow & Telemetry Surface Utilities */
+.telemetry-glass {
+  background: rgba(13, 16, 33, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 245, 212, 0.24);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.75), 0 0 24px rgba(0, 245, 212, 0.08);
+}
+
+.telemetry-glass-magenta {
+  background: rgba(16, 12, 30, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 42, 133, 0.32);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.8), 0 0 28px rgba(255, 42, 133, 0.12);
+}
+
+.telemetry-glass-amber {
+  background: rgba(18, 16, 28, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(254, 228, 64, 0.32);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.8), 0 0 28px rgba(254, 228, 64, 0.12);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 14px rgba(0, 245, 212, 0.65), 0 0 32px rgba(0, 245, 212, 0.25);
+}
+
+.neon-text-magenta {
+  text-shadow: 0 0 14px rgba(255, 42, 133, 0.7), 0 0 32px rgba(255, 42, 133, 0.3);
+}
+
+.neon-text-amber {
+  text-shadow: 0 0 14px rgba(254, 228, 64, 0.7), 0 0 28px rgba(254, 228, 64, 0.3);
+}
+
+.neon-btn-primary {
+  background: linear-gradient(135deg, #00F5D4 0%, #00BBF9 100%);
+  color: #06070E;
+  box-shadow: 0 0 24px rgba(0, 245, 212, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-btn-primary:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 0 34px rgba(0, 245, 212, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.neon-btn-primary:active {
+  transform: translateY(0px) scale(0.985);
+}
+
+.neon-btn-magenta {
+  background: linear-gradient(135deg, #FF2A85 0%, #9B5DE5 100%);
+  color: #F8FAFC;
+  box-shadow: 0 0 24px rgba(255, 42, 133, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-btn-magenta:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 0 34px rgba(255, 42, 133, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: rgba(0, 245, 212, 0.35);
+  }
+  50% {
+    border-color: rgba(0, 245, 212, 0.85);
+  }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2.2s infinite ease-in-out;
+}
+
+@keyframes countdown-pop {
+  0% {
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+}
+
+.animate-countdown {
+  animation: countdown-pop 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom subtle scrollbars for modals and SEO drawer */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #06070E;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00F5D4;
+}
